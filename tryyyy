@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <string.h>
+ char s[100001];
+int main()
+{
+    int t,len,n;
+    char *p;
+    scanf("%d",&t);
+    while(t--)
+    {
+        n=0;
+        scanf("%s",s);
+        p=s;
+        len=strlen(s);
+        for(int i=0;i<len;i++)
+        {
+            if(p[i]=='X')
+            {
+                //printf("%c",p[i]);
+                for(int j=i;j<len;j++)
+                {
+                    if(p[j]=='J')
+                    {
+                        //printf("%c",p[j]);
+                        for(int k=j;k<len;k++)
+                        {
+                            if(p[k]=='B')
+                            {
+                                //printf("%c",p[k]);
+                                n++;
+                            }
+                        }
+                    }
+                }
+                
+            }
+        }
+        printf("%d\n",n%1000000007);
+    }
+    return 0;
+}
